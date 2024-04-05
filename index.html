@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA IMC</title>
+</head>
+<body>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        #imcContainer {
+    width: 600px; /* Ajusta este valor al ancho de tu imagen */
+    margin: auto; /* Centra el contenedor si la página es más ancha */
+}
+
+#progressContainer {
+    width: 100%;
+    background-color: #ddd;
+    margin: 20px 0;
+    height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0;
+    transition: width 2s ease, background-color 0.5s ease;
+    color: white; /* Asegura que el texto sea blanco */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    white-space: nowrap; /* Evita que el texto se envuelva */
+}
+
+#imcResult {
+    margin-top: 20px;
+}
+
+
+
+/* Animación de la barra de progreso */
+@keyframes loadProgress {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+}
+
+
+    </style>
+
+
+</head>
+        <h1>Calculadora IMC</h1>
+        <form action="">
+            <label for="textPeso">Peso:</label>
+            <input type="text" id="textPeso" placeholder="Escribe en Kg">
+
+            <label for="textAltura">Altura:</label>
+            <input type="text" id="textAltura" placeholder="Escribe los decimales con punto .">
+            
+            <input type="submit" value="Calcular" id="btnCalcular">
+
+        </form>
+        <br>
+        <div id="imcContainer">
+            <img src="img/IMC.png" alt="IMC" id="imcImage">
+            <!-- Contenedor de la barra de progreso aquí -->
+            <div id="progressContainer">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+        
+        <div id="imcResult"></div>
+
+
+    <script src="js/calculadora.js"></script>
+</body>
+</html>
